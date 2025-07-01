@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Unity of Mind and Body</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Unity of Mind and Body Home">Unity of Mind and Body</a>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="booking.html">Book a Session</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="feedback.html" class="active" aria-current="page">Feedback</a></li>
+                    <li><a href="login.html" aria-label="Login to your account">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="form-container">
+                <h2>Provide Feedback</h2>
+                <p>We value your input! Please let us know about your experience or any suggestions you have. This form is similar to our contact form but specifically for feedback.</p>
+                <form id="feedbackForm" action="#" method="POST">
+                    <div>
+                        <label for="name">Name (Optional):</label>
+                        <input type="text" id="name" name="name" autocomplete="name">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div>
+                        <label for="email">Email (Optional, if you'd like a response):</label>
+                        <input type="email" id="email" name="email" autocomplete="email">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div>
+                        <label for="feedbackType">Type of Feedback:</label>
+                        <select id="feedbackType" name="feedbackType" required aria-required="true">
+                            <option value="">-- Select a type --</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="compliment">Compliment</option>
+                            <option value="concern">Concern/Issue</option>
+                            <option value="general">General Feedback</option>
+                        </select>
+                        <span class="error-message" id="feedbackTypeError"></span>
+                    </div>
+                    <div>
+                        <label for="message">Your Feedback:</label>
+                        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    <button type="submit">Submit Feedback</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Unity of Mind and Body. All rights reserved.</p>
+            <p><a href="about.html">About Us</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+    <script src="js/forms.js"></script>
+</body>
+</html>

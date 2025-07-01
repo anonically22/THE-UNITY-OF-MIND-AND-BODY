@@ -391,3 +391,33 @@ By the end of all phases, you'll have:
 8. **Analytics tracking** for usage insights
 
 This plan balances rapid MVP development with long-term scalability, ensuring you can demonstrate value quickly while building toward a comprehensive solution.
+
+---
+## ✨ UI/UX Enhancements (Post-Phase 1)
+
+Following the completion of the initial Phase 1 MVP Frontend, a dedicated effort was made to enhance the UI/UX based on a detailed design prompt. The key improvements include:
+
+*   **Modern Design Language**:
+    *   **Color Palette**: Implemented a calming and welcoming palette featuring pastel blues (`#A0D2DB`), peach (`#F4B8A9`), and pastel greens (`#82C09A`), with supporting neutral tones for text and backgrounds.
+    *   **Typography**: Standardized on a clean, readable sans-serif font stack (`'Nunito Sans', 'Helvetica Neue', Arial, sans-serif`).
+    *   **Rounded Elements & Shadows**: Applied consistent `border-radius` to UI elements like buttons, cards, and form inputs, along with subtle `box-shadows` to create depth and a modern feel.
+*   **Homepage Overhaul**:
+    *   Redesigned hero section with a clearer mission statement and more inviting Call-to-Action (CTA) buttons.
+    *   Added an "Introduction" section and a "Services Overview" using a card-based layout to better showcase platform offerings.
+*   **Resources Page**:
+    *   Transformed the articles list into a responsive `card-grid` layout.
+    *   Included placeholders for future image/infographics within each resource card.
+    *   Added a placeholder UI for category-based filtering.
+*   **Improved Forms**:
+    *   Ensured all forms (Register, Login, Contact, Booking, Feedback) utilize a consistent `.form-container` style for a cohesive look and feel.
+    *   Form elements (`input`, `select`, `textarea`) and buttons are styled according to the new design language.
+*   **Dashboard Enhancements**:
+    *   Redesigned the user dashboard with a welcoming header and card-based layouts for "Upcoming Sessions" and "Recommended Resources".
+    *   Introduced new button styles (`.btn-small`, `.btn-outline`) for varied actions within the dashboard.
+*   **Navigation & Footer**:
+    *   Updated the main navigation across all pages to include a "Feedback" link and styled the "Book a Session" link as a prominent button.
+    *   Standardized the footer to include "About Us", "Contact", "Feedback", and "Privacy Policy" links. Created placeholder pages for "Feedback" and "Privacy Policy".
+*   **Prominent CTAs**:
+    *   Ensured all primary and secondary Call-to-Action buttons are visually distinct, using the new color palette and button styles for better user guidance.
+
+These enhancements aim to create a more visually appealing, user-friendly, and trustworthy experience, aligning with the goal of reducing mental health stigma and making wellness resources more accessible to students and faculty.
