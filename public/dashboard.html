@@ -26,35 +26,64 @@
     </header>
     <main>
         <div class="container">
-            <section id="dashboard-welcome">
+            <section id="dashboard-welcome" class="dashboard-header">
                 <h2>Welcome, [User Name]!</h2>
-                <p>This is your personal dashboard. Here you can manage your upcoming sessions, access helpful resources, and update your profile.</p>
+                <p>Manage your sessions, explore resources, and take control of your wellness journey.</p>
+                <a href="booking.html" class="btn btn-primary" aria-label="Book a new session" style="margin-top: var(--spacing-md);">Book a New Session</a>
             </section>
+
             <section id="upcoming-sessions">
                 <h3>Your Upcoming Sessions</h3>
-                <ul>
-                    <li>
-                        <strong>Therapy Type:</strong> Mindfulness Practice <br>
-                        <strong>Date:</strong> Thursday, August 15, 2024 <br>
-                        <strong>Time:</strong> 10:00 AM - 10:50 AM <br>
-                        <button type="button" class="btn btn-secondary" aria-label="Cancel Mindfulness Practice session on August 15, 2024 at 10:00 AM">Cancel Session</button>
-                    </li>
-                    <li>
-                        <strong>Therapy Type:</strong> Cognitive Behavioral Therapy (CBT) <br>
-                        <strong>Date:</strong> Thursday, August 22, 2024 <br>
-                        <strong>Time:</strong> 02:00 PM - 02:50 PM <br>
-                        <button type="button" class="btn btn-secondary" aria-label="Cancel Cognitive Behavioral Therapy session on August 22, 2024 at 02:00 PM">Cancel Session</button>
-                    </li>
-                </ul>
-                <a href="booking.html" class="btn" aria-label="Book a new session">Book a New Session</a>
+                <div class="card-grid dashboard-grid">
+                    <div class="card session-card">
+                        <h4>Mindfulness Practice</h4>
+                        <p><strong>Date:</strong> Thursday, August 15, 2024</p>
+                        <p><strong>Time:</strong> 10:00 AM - 10:50 AM</p>
+                        <p><strong>Status:</strong> Confirmed</p>
+                        <button type="button" class="btn btn-secondary btn-small" aria-label="Cancel Mindfulness Practice session on August 15, 2024 at 10:00 AM">Cancel Session</button>
+                    </div>
+                    <div class="card session-card">
+                        <h4>Cognitive Behavioral Therapy (CBT)</h4>
+                        <p><strong>Date:</strong> Thursday, August 22, 2024</p>
+                        <p><strong>Time:</strong> 02:00 PM - 02:50 PM</p>
+                        <p><strong>Status:</strong> Confirmed</p>
+                        <button type="button" class="btn btn-secondary btn-small" aria-label="Cancel Cognitive Behavioral Therapy session on August 22, 2024 at 02:00 PM">Cancel Session</button>
+                    </div>
+                    <!-- Add a placeholder if no sessions -->
+                    <!--
+                    <div class="card card-placeholder">
+                        <p>You have no upcoming sessions.</p>
+                        <a href="booking.html" class="btn" aria-label="Book a new session">Book a Session</a>
+                    </div>
+                     -->
+                </div>
             </section>
-            <section id="quick-links">
-                <h3>Quick Links & Resources</h3>
-                <ul>
-                    <li><a href="resources.html" aria-label="Explore mental health resources">Explore Mental Health Resources</a></li>
-                    <li><a href="booking.html" aria-label="View your booking history">View Booking History (Placeholder)</a></li>
-                    <li><a href="#" aria-label="Update your profile information">Update Profile Information (Placeholder)</a></li>
-                    <li><a href="contact.html" aria-label="Contact support for assistance">Contact Support</a></li>
+
+            <section id="recommended-resources">
+                <h3>Recommended For You</h3>
+                <div class="card-grid dashboard-grid">
+                    <div class="card resource-card">
+                        <div class="img-placeholder" style="height: 100px;"></div>
+                        <h4>Stress Management Techniques</h4>
+                        <p>Discover effective ways to manage stress during your studies.</p>
+                        <a href="resources.html#stress" class="btn btn-secondary btn-small">Read Article</a>
+                    </div>
+                    <div class="card resource-card">
+                        <div class="img-placeholder" style="height: 100px;"></div>
+                        <h4>Introduction to Meditation</h4>
+                        <p>Start your mindfulness journey with our beginner's guide.</p>
+                        <a href="resources.html#mindfulness" class="btn btn-secondary btn-small">View Guide</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quick-actions">
+                <h3>Quick Actions</h3>
+                <ul class="quick-action-list">
+                    <li><a href="resources.html" class="btn btn-outline" aria-label="Explore all mental health resources">Explore All Resources</a></li>
+                    <li><a href="booking.html" class="btn btn-outline" aria-label="View your booking history">View Booking History</a></li>
+                    <li><a href="#" class="btn btn-outline" aria-label="Update your profile information">Update Profile</a></li>
+                    <li><a href="contact.html" class="btn btn-outline" aria-label="Contact support for assistance">Contact Support</a></li>
                 </ul>
             </section>
         </div>

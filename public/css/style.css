@@ -1,5 +1,44 @@
-/* Basic Reset */
-body, h1, h2, h3, p, ul, li, form, label, input, textarea, button, nav, section, article, header, footer, main {
+/* ==== THE UNITY OF MIND AND BODY - ENHANCED UI STYLES ==== */
+
+/* --- Core Variables & Theming --- */
+:root {
+    --font-primary: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif;
+    --font-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fallback */
+
+    --color-primary: #A0D2DB;       /* Pastel Blue */
+    --color-primary-dark: #78B9C4;  /* Darker Pastel Blue */
+    --color-secondary: #F4B8A9;     /* Peach */
+    --color-secondary-dark: #EAA593;/* Darker Peach */
+    --color-accent: #82C09A;        /* Pastel Green */
+    --color-accent-dark: #6BAA83;   /* Darker Pastel Green */
+
+    --color-text: #4A4A4A;          /* Dark Grey */
+    --color-text-light: #FDFDFD;    /* Off-White (for dark backgrounds) */
+    --color-text-subtle: #7f8c8d;   /* Medium Grey for less important text */
+
+    --color-background: #FDFDFD;    /* Very Light Grey / Off-White */
+    --color-surface: #FFFFFF;       /* White for cards, modals, etc. */
+    --color-border: #DDE2E5;        /* Light Grey for borders */
+    --color-error: #e74c3c;         /* Error Red */
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    --shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem;  /* 8px */
+    --spacing-md: 1rem;    /* 16px */
+    --spacing-lg: 1.5rem;  /* 24px */
+    --spacing-xl: 2rem;    /* 32px */
+    --spacing-xxl: 3rem;   /* 48px */
+}
+
+/* --- Basic Reset --- */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,250 +46,315 @@ body, h1, h2, h3, p, ul, li, form, label, input, textarea, button, nav, section,
 
 html {
     scroll-behavior: smooth;
+    font-size: 100%; /* Base font size */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
-    line-height: 1.7; /* Improved readability */
-    color: #333;
-    background-color: #f8f9fa; /* Lighter background */
+    font-family: var(--font-primary);
+    line-height: 1.65;
+    color: var(--color-text);
+    background-color: var(--color-background);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* --- Typography --- */
-h1, h2, h3 {
-    margin-bottom: 0.75em;
-    color: #2c3e50; /* Darker, more professional blue */
-    font-weight: 600;
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text); /* Default to main text color, can be overridden */
+    font-weight: 700; /* Bolder for headings */
+    line-height: 1.3;
 }
 
-h1 { font-size: 2.2em; } /* Mobile first sizing */
-h2 { font-size: 1.8em; }
-h3 { font-size: 1.4em; }
+h1 { font-size: clamp(2em, 5vw, 2.8em); }
+h2 { font-size: clamp(1.6em, 4vw, 2.2em); }
+h3 { font-size: clamp(1.3em, 3vw, 1.7em); }
 
 p {
-    margin-bottom: 1em;
+    margin-bottom: var(--spacing-md);
 }
 
 a {
-    color: #3498db; /* Standard link blue */
+    color: var(--color-primary-dark);
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
 
 a:hover, a:focus {
-    color: #2980b9;
+    color: var(--color-accent-dark);
     text-decoration: underline;
 }
 
 /* --- Layout & Structure --- */
-.container { /* Used within header, main, footer for consistent padding and max-width */
+.container {
     width: 90%;
-    max-width: 1100px; /* Slightly wider max-width */
-    margin: 0 auto;
+    max-width: 1140px; /* Standard max-width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
 }
 
 header {
-    background: #34495e; /* Darker, more modern header */
-    color: #ecf0f1; /* Light text for contrast */
-    padding: 1em 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding: var(--spacing-sm) 0;
+    box-shadow: var(--shadow-subtle);
     width: 100%;
+    border-bottom: 1px solid var(--color-border);
 }
 
 header .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
-header .logo { /* Added a logo class for the site title/logo */
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #ecf0f1;
+header .logo {
+    font-size: clamp(1.5em, 3vw, 2em);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary-dark);
 }
 header .logo a {
-    color: #ecf0f1;
+    color: inherit; /* Inherit color from parent .logo */
     text-decoration: none;
 }
-
 
 nav ul {
     list-style: none;
     display: flex;
-    flex-direction: column; /* Mobile first: stack nav items */
+    flex-direction: column;
     width: 100%;
-    align-items: center; /* Center nav items when stacked */
+    align-items: center;
 }
 
 nav ul li {
-    margin: 0.5em 0; /* Spacing for stacked items */
-    width: 90%; /* Make nav items take good width on mobile */
-    max-width: 300px; /* Max width for stacked items */
+    margin: var(--spacing-xs) 0;
+    width: 100%;
+    max-width: 280px;
 }
 
 nav ul li a {
-    color: #ecf0f1;
-    padding: 0.8em 1em;
+    color: var(--color-text);
+    padding: var(--spacing-sm) var(--spacing-md);
     display: block;
     text-align: center;
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in-out;
+    border-radius: var(--border-radius-md);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    font-weight: 600;
 }
 
-nav ul li a:hover, nav ul li a:focus, nav ul li a.active { /* Added .active class support */
-    background-color: #46627f;
+nav ul li a:hover, nav ul li a:focus {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
     text-decoration: none;
 }
+nav ul li a.active {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    font-weight: 700;
+}
+/* Special styling for Register button in nav if it's a .btn */
+nav ul li a.btn {
+    padding: var(--spacing-sm) var(--spacing-lg); /* Adjust padding if it's a button */
+}
 
-main { /* Main content wrapper */
+
+main {
     flex-grow: 1;
-    background-color: #ffffff; /* White background for content area */
-    padding: 20px 0; /* Vertical padding for main */
+    padding: var(--spacing-lg) 0;
 }
-
-main .container { /* Container for sections within main */
-     padding-top: 10px; /* Add some space at the top of the main content area */
-     padding-bottom: 10px;
-}
-
 
 section {
-    padding: 25px 0; /* Vertical padding for sections */
-    border-bottom: 1px solid #e9ecef; /* Lighter border */
+    padding: var(--spacing-xl) 0;
+    border-bottom: 1px solid var(--color-border);
 }
-
-section:last-of-type { /* Use last-of-type for better accuracy */
+section:last-of-type {
     border-bottom: none;
 }
+section h2 { /* Section titles */
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-primary-dark);
+}
+
 
 footer {
-    background: #2c3e50; /* Consistent dark footer */
-    color: #bdc3c7; /* Softer text color for footer */
+    background: var(--color-text);
+    color: var(--color-text-light);
     text-align: center;
-    padding: 1.5em 0;
-    margin-top: auto;
+    padding: var(--spacing-lg) 0;
+    margin-top: auto; /* Pushes footer to bottom */
     width: 100%;
     font-size: 0.9em;
 }
+footer .container p {
+    margin-bottom: var(--spacing-sm);
+}
+footer a {
+    color: var(--color-primary);
+}
+footer a:hover, footer a:focus {
+    color: var(--color-secondary);
+}
 
-/* --- Specific Sections Styling --- */
+
+/* --- Hero Section --- */
 #hero {
-    /* Placeholder for background image if desired, e.g. background: linear-gradient(rgba(52, 73, 94, 0.7), rgba(52, 73, 94, 0.7)), url('../images/hero-placeholder.jpg'); */
-    background-color: #3498db; /* Fallback or primary hero color */
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    padding: 50px 20px; /* Adjusted padding */
+    background-color: var(--color-primary); /* Pastel Blue */
+    color: var(--color-text-light);
+    padding: var(--spacing-xxl) var(--spacing-md);
     text-align: center;
-    border-radius: 0; /* Full width hero, or add container and round */
+    border-radius: 0; /* Full width, or use container and round if preferred */
+    /* Consider adding a subtle pattern or gradient if no image */
+    /* background-image: linear-gradient(to bottom right, var(--color-primary), var(--color-accent)); */
 }
-
+#hero .container { /* If hero content needs to be constrained */
+    /* max-width: 800px; */ /* Example constraint */
+}
 #hero h1 {
-    color: #ffffff;
-    font-size: 2.5em; /* Responsive font size */
-    margin-bottom: 0.5em;
+    color: var(--color-text-light); /* Ensure contrast */
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
 }
-
 #hero p {
-    font-size: 1.2em;
-    margin-bottom: 1.5em;
+    font-size: clamp(1em, 2.5vw, 1.25em);
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px; /* Constrain paragraph width for readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.btn, form button { /* Unified button styling */
+/* --- Buttons --- */
+.btn, form button[type="submit"] { /* Unified button styling */
     display: inline-block;
-    background: #3498db;
-    color: #ffffff;
-    padding: 0.8em 1.5em;
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    padding: var(--spacing-sm) var(--spacing-lg);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius-md);
     cursor: pointer;
     font-size: 1em;
+    font-weight: 600;
     text-align: center;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease;
-    text-decoration: none; /* For .btn used as <a> */
-}
-
-.btn:hover, form button:hover,
-.btn:focus, form button:focus {
-    background: #2980b9;
-    color: #ffffff;
     text-decoration: none;
-    transform: translateY(-1px); /* Subtle lift effect */
+    box-shadow: var(--shadow-subtle);
 }
 
-.btn-secondary { /* Secondary button style */
-    background: #95a5a6;
+.btn:hover, form button[type="submit"]:hover,
+.btn:focus, form button[type="submit"]:focus {
+    background-color: var(--color-accent); /* Use accent for hover */
+    color: var(--color-text-light);
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Secondary button style (e.g., for less critical actions or in nav) */
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-text); /* Text color for peach button */
 }
 .btn-secondary:hover, .btn-secondary:focus {
-    background: #7f8c8d;
+    background-color: var(--color-secondary-dark);
+    color: var(--color-text-light);
+}
+
+/* Button in nav might need specific overrides if .btn class is used */
+header nav .btn {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}
+header nav .btn:hover, header nav .btn:focus {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-text-light);
 }
 
 
-#features ul, #team ul, #upcoming-sessions ul, #quick-links ul, #articles article {
-    list-style: none; /* Removing default list style for #articles too */
+/* --- Cards / Grids (for Resources, Features, etc.) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.card {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+.card h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-sm);
+}
+.card p {
+    font-size: 0.95em;
+    flex-grow: 1; /* Makes p take available space if card has fixed height or other elements */
+    margin-bottom: var(--spacing-md);
+}
+.card .btn { /* Button inside a card */
+    margin-top: auto; /* Pushes button to bottom if card is flex column */
+    width: 100%; /* Make buttons in cards full width for consistency */
+}
+
+/* Specific list styling for features, team, etc. if not using cards */
+#features ul, #team ul, #upcoming-sessions ul, #quick-links ul {
+    list-style: none;
     padding: 0;
 }
-
-#features li, #team li, #upcoming-sessions li, #quick-links li, #articles article {
-    background: #f8f9fa; /* Light background for list items and articles */
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border-left: 4px solid #3498db; /* Accent border */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+#features li, #team li, #upcoming-sessions li, #quick-links li {
+    background: var(--color-surface);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border-left: 5px solid var(--color-accent);
+    box-shadow: var(--shadow-subtle);
 }
-#articles article h3 { /* Specific styling for article titles */
-    margin-bottom: 0.5em;
-}
-
-
-#upcoming-sessions button { /* Style for cancel buttons in dashboard */
-    margin-left: 10px;
-    padding: 5px 10px;
-    font-size: 0.9em;
-    background-color: #e74c3c; /* Red for cancel */
+#upcoming-sessions button { /* Cancel button in dashboard */
+    background-color: var(--color-error);
 }
 #upcoming-sessions button:hover, #upcoming-sessions button:focus {
-    background-color: #c0392b;
+    background-color: #c0392b; /* Darker error red */
 }
 
 
 /* --- Forms --- */
-.form-container { /* Wrapper for forms if needed, or style form tag directly */
-    background-color: #ffffff; /* White background for forms */
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    max-width: 550px; /* Slightly wider form */
-    margin: 20px auto; /* Center form if it's wrapped in form-container */
+.form-container {
+    background-color: var(--color-surface);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    max-width: 550px;
+    margin: var(--spacing-lg) auto;
 }
-
-/* If not using .form-container, style the form tag itself when it's the primary element of a page section */
-main section form {
-    /* Styles for forms directly within a section, if not using .form-container */
-}
-
-
-main section h2 { /* Center titles of form sections */
+.form-container h2 { /* Title within a form container */
     text-align: center;
-    margin-bottom: 1.5em;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary-dark);
 }
 
-
-form div {
-    margin-bottom: 1.2em;
+form div { /* Wrapper for label + input */
+    margin-bottom: var(--spacing-md);
 }
 
 form label {
     display: block;
-    margin-bottom: 0.5em;
+    margin-bottom: var(--spacing-sm);
     font-weight: 600;
-    color: #555;
+    color: var(--color-text-subtle);
 }
 
 form input[type="text"],
@@ -261,145 +365,234 @@ form input[type="time"],
 form select,
 form textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ced4da; /* Lighter border */
-    border-radius: 5px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
     font-size: 1em;
+    font-family: var(--font-primary);
+    background-color: var(--color-background); /* Slightly off-white inputs */
+    color: var(--color-text);
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 form input:focus, form select:focus, form textarea:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    border-color: var(--color-primary-dark);
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb, 160, 210, 219), 0.25); /* Define --color-primary-rgb if using this */
     outline: none;
+    background-color: var(--color-surface);
 }
+/* Define --color-primary-rgb (example for #A0D2DB -> 160, 210, 219) */
+/* This is a placeholder, actual RGB values should be set if this focus style is desired. */
+/* For simplicity, a solid border might be better without JS to set CSS vars */
+form input:focus, form select:focus, form textarea:focus {
+    border-color: var(--color-primary-dark);
+    /* box-shadow: 0 0 0 0.2rem rgba(160, 210, 219, 0.25); */ /* Simpler focus */
+    outline: 2px solid var(--color-primary-dark);
+    outline-offset: 2px;
+}
+
 
 form textarea {
     min-height: 120px;
-    resize: vertical; /* Allow vertical resize */
+    resize: vertical;
 }
 
-form button {
-    width: 100%; /* Full width button by default */
+form button[type="submit"] { /* Already styled by .btn, but can add specifics */
+    width: 100%;
+    margin-top: var(--spacing-sm);
 }
 
 /* Form Error Styling */
 .error-message {
-    display: block; /* Show by default, content drives visibility */
-    color: #e74c3c; /* Softer red for errors */
-    font-size: 0.85em;
-    margin-top: 0.3em;
+    display: block;
+    color: var(--color-error);
+    font-size: 0.875em; /* Slightly smaller */
+    margin-top: var(--spacing-xs);
     font-weight: 500;
 }
-
-.input-error { /* Applied by JS to input fields with errors */
-   border-color: #e74c3c !important;
-   box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25) !important;
+.input-error {
+   border-color: var(--color-error) !important;
 }
-.error-message:empty { /* Hide if empty - JS should clear textContent */
+.input-error:focus { /* Ensure focus on error field is also clear */
+   outline-color: var(--color-error) !important;
+   /* box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25) !important; */
+}
+.error-message:empty {
     display: none;
+}
+small.form-text.text-muted { /* Helper text below inputs */
+    display: block;
+    font-size: 0.875em;
+    color: var(--color-text-subtle);
+    margin-top: var(--spacing-xs);
 }
 
 
 /* --- Responsive Design --- */
-
-/* Tablet (medium devices, 768px and up) */
-@media (min-width: 768px) {
-    h1 { font-size: 2.8em; }
-    h2 { font-size: 2.2em; }
-    h3 { font-size: 1.6em; }
-
+@media (min-width: 768px) { /* Tablet and up */
     header .container {
-        flex-direction: row; /* Align logo and nav side-by-side */
+        flex-direction: row;
+        justify-content: space-between;
     }
     header .logo {
-        margin-bottom: 0; /* Remove bottom margin when side-by-side */
+        margin-bottom: 0;
     }
-
     nav ul {
-        flex-direction: row; /* Horizontal nav */
-        width: auto; /* Allow nav to size based on content */
+        flex-direction: row;
+        width: auto;
+    }
+    nav ul li {
+        margin: 0 var(--spacing-xs);
+        width: auto;
+        max-width: none;
+    }
+    nav ul li:last-child { margin-right: 0; }
+
+    nav ul li a {
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 
-    nav ul li {
-        margin: 0 0.5em; /* Horizontal spacing */
-        width: auto; /* Reset width */
-        max-width: none; /* Reset max-width */
+    section {
+        padding: var(--spacing-xl) 0;
     }
-    nav ul li:last-child {
-        margin-right: 0;
-    }
-    nav ul li a {
-        padding: 0.6em 1em; /* Adjust padding for horizontal nav */
+     section h2 {
+        margin-bottom: var(--spacing-xl);
     }
 
     #hero {
-        padding: 70px 20px; /* More padding on larger screens */
+        padding: var(--spacing-xxl) var(--spacing-md);
     }
     #hero h1 {
-        font-size: 3em;
+        font-size: clamp(2.5em, 6vw, 3.5em);
     }
     #hero p {
-        font-size: 1.3em;
+        font-size: clamp(1.1em, 3vw, 1.4em);
     }
 
-
-    #features { /* Example of using Grid for features section on larger screens */
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
-        gap: 25px; /* Gap between grid items */
+    form button[type="submit"] {
+        width: auto; /* Allow form buttons to not be full-width on larger screens */
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
     }
-     #features li { /* Reset margin for grid items if needed */
-        margin-bottom: 0;
+    .form-container form button[type="submit"] { /* Keep full width in form-container if desired */
+         width: 100%;
     }
-
-
-    form button {
-        width: auto; /* Allow button to size to content on larger screens */
-        padding: 0.8em 2em; /* More horizontal padding for non-full-width buttons */
-    }
-
-    .form-container form button, main section form button { /* Ensure form buttons inside containers/sections can be auto or full */
-         /* If you want all form buttons to be auto on tablet+, set width: auto here */
-         /* If you want them to remain full width, keep width: 100% or remove this specific override */
-    }
-
 }
 
-/* Desktop (large devices, 992px and up) */
-@media (min-width: 992px) {
-    .container { /* Container within header, main, footer */
+@media (min-width: 992px) { /* Desktop and up */
+    .container {
         width: 85%;
     }
-    h1 { font-size: 3em; }
-    h2 { font-size: 2.4em; }
-
-    #hero h1 {
-        font-size: 3.5em;
-    }
-    #hero p {
-        font-size: 1.4em;
-    }
-
-    #features {
-         grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns for desktop */
-    }
+    /* #features.card-grid { grid-template-columns: repeat(3, 1fr); } */ /* Example for fixed columns */
 }
 
-/* Accessibility - Focus Visible (for keyboard navigation) */
-*:focus-visible {
-  outline: 3px solid #005fcc; /* More distinct focus color */
+/* --- Accessibility --- */
+.visually-hidden { /* For screen-reader only text */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+*:focus-visible { /* Modern focus styling */
+  outline: 3px solid var(--color-primary-dark);
   outline-offset: 2px;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #005fcc; /* Ensure visibility on various backgrounds */
+  box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 5px var(--color-primary-dark);
 }
-/* Hide default outline when focus-visible is supported, for mouse users */
-*:focus:not(:focus-visible) {
+*:focus:not(:focus-visible) { /* Remove outline for mouse users if not using focus-visible polyfill */
   outline: none;
 }
-
-/* Add active class to current page link in nav - to be set by JS or manually per page */
-/* Example: <a href="index.html" class="active">Home</a> */
+/* Add active class to current page link in nav - set by JS or manually per page */
 nav ul li a.active {
-    font-weight: bold;
-    /* background-color: #46627f; /* Already defined above, but ensure it's distinct */
+    font-weight: 700; /* Already bolded, but ensure it's distinct */
+    /* background-color set above */
+}
+
+/* Helper for placeholder images if needed */
+.img-placeholder {
+    background-color: var(--color-border);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-subtle);
+    font-style: italic;
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+/* --- Dashboard Specific Styles --- */
+.dashboard-header {
+    background-color: var(--color-primary); /* Light blue background */
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+.dashboard-header h2 {
+    color: var(--color-text-light);
+}
+.dashboard-header p {
+    color: var(--color-text-light);
+    font-size: 1.1em;
+    margin-bottom: var(--spacing-lg);
+}
+
+.dashboard-grid { /* Can be same as card-grid or have specific overrides */
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Example override */
+}
+
+.session-card h4, .resource-card h4 {
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-xs);
+}
+.session-card p {
+    font-size: 0.95em;
+    margin-bottom: var(--spacing-xs);
+}
+.session-card p strong {
+    color: var(--color-text-subtle);
+}
+
+.btn-small {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.85em;
+}
+
+.quick-action-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+.quick-action-list li a.btn-outline {
+    display: block; /* Make the link fill the li for easier clicking if used in list */
+    width: 100%;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--color-primary-dark);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+.btn-outline:hover, .btn-outline:focus {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    transform: none; /* No lift for outline buttons usually */
+    box-shadow: none;
+}
+/* Ensure primary button in dashboard header is styled correctly */
+.dashboard-header .btn.btn-primary {
+    background-color: var(--color-accent); /* Example: Use accent for primary CTA in this header */
+    color: var(--color-text-light);
+}
+.dashboard-header .btn.btn-primary:hover {
+    background-color: var(--color-accent-dark);
 }

@@ -26,29 +26,65 @@
     </header>
     <main>
         <div class="container">
-            <section id="articles">
-                <h2>Mental Health Articles & Tips</h2>
-                <p>Explore our collection of articles and tips to support your mental well-being.</p>
-                <article>
-                    <h3>Understanding Anxiety Disorders</h3>
-                    <p>Anxiety is a natural human emotion, but when it becomes persistent and overwhelming, it might be an anxiety disorder. Learn about the different types, symptoms, and available support options. This article covers generalized anxiety disorder (GAD), panic disorder, social anxiety, and more.</p>
-                    <a href="#" class="btn btn-secondary" aria-label="Read more about Understanding Anxiety Disorders">Read More</a>
-                </article>
-                <article>
-                    <h3>Effective Coping Strategies for Stress</h3>
-                    <p>Stress is a part of life, but chronic stress can take a toll on your physical and mental health. Discover practical and effective coping mechanisms, including mindfulness techniques, physical activity, time management skills, and when to seek professional help.</p>
-                    <a href="#" class="btn btn-secondary" aria-label="Read more about Effective Coping Strategies for Stress">Read More</a>
-                </article>
-                <article>
-                    <h3>The Power of Mindfulness Meditation</h3>
-                    <p>Mindfulness meditation involves paying attention to the present moment without judgment. This practice can reduce stress, improve focus, and enhance emotional regulation. This guide provides simple exercises to get you started on your mindfulness journey.</p>
-                    <a href="#" class="btn btn-secondary" aria-label="Read more about The Power of Mindfulness Meditation">Read More</a>
-                </article>
-                <article>
-                    <h3>Building Healthy Sleep Habits</h3>
-                    <p>Quality sleep is crucial for mental and physical health. If you're struggling with insomnia or poor sleep, this article offers tips on creating a restful sleep environment, developing a relaxing bedtime routine, and understanding factors that might be disrupting your sleep.</p>
-                    <a href="#" class="btn btn-secondary" aria-label="Read more about Building Healthy Sleep Habits">Read More</a>
-                </article>
+            <section id="resources-library">
+                <h2>Resource Library</h2>
+                <p>Explore our collection of articles, infographics, and tips to support your mental well-being.</p>
+
+                <div id="resource-filters" class="resource-filters" style="margin-bottom: var(--spacing-lg);">
+                    <h3 class="visually-hidden">Filter Resources</h3>
+                    <form aria-label="Filter resources by category">
+                        <label for="category-filter" style="margin-right: var(--spacing-sm); font-weight: 600;">Filter by Category:</label>
+                        <select id="category-filter" name="category" style="padding: var(--spacing-xs) var(--spacing-sm); border-radius: var(--border-radius-sm); border: 1px solid var(--color-border);">
+                            <option value="all">All Categories</option>
+                            <option value="anxiety">Anxiety</option>
+                            <option value="stress">Stress Management</option>
+                            <option value="mindfulness">Mindfulness</option>
+                            <option value="sleep">Sleep Hygiene</option>
+                            <option value="relationships">Relationships</option>
+                            <option value="self-care">Self-Care</option>
+                        </select>
+                        <button type="button" class="btn btn-secondary" style="margin-left: var(--spacing-sm); padding: var(--spacing-xs) var(--spacing-sm);">Apply Filter</button>
+                    </form>
+                </div>
+
+                <div id="articles" class="card-grid">
+                    <article class="card">
+                        <div class="img-placeholder" style="height: 150px;"></div> <!-- Placeholder for image/infographic -->
+                        <h3>Understanding Anxiety Disorders</h3>
+                        <p>Learn about types, symptoms, and support for anxiety. Covers GAD, panic disorder, social anxiety, and more.</p>
+                        <a href="#" class="btn" aria-label="Read more about Understanding Anxiety Disorders">Read More</a>
+                    </article>
+                    <article class="card">
+                        <div class="img-placeholder" style="height: 150px;"></div>
+                        <h3>Effective Coping Strategies for Stress</h3>
+                        <p>Discover practical coping mechanisms: mindfulness, physical activity, time management, and seeking help.</p>
+                        <a href="#" class="btn" aria-label="Read more about Effective Coping Strategies for Stress">Read More</a>
+                    </article>
+                    <article class="card">
+                        <div class="img-placeholder" style="height: 150px;"></div>
+                        <h3>The Power of Mindfulness Meditation</h3>
+                        <p>Reduce stress, improve focus, and enhance emotional regulation with simple mindfulness exercises.</p>
+                        <a href="#" class="btn" aria-label="Read more about The Power of Mindfulness Meditation">Read More</a>
+                    </article>
+                    <article class="card">
+                        <div class="img-placeholder" style="height: 150px;"></div>
+                        <h3>Building Healthy Sleep Habits</h3>
+                        <p>Tips for a restful sleep environment, relaxing bedtime routines, and understanding sleep disruptors.</p>
+                        <a href="#" class="btn" aria-label="Read more about Building Healthy Sleep Habits">Read More</a>
+                    </article>
+                    <article class="card">
+                        <div class="img-placeholder" style="height: 150px;"></div>
+                        <h3>Nourishing Your Body & Mind</h3>
+                        <p>Explore the connection between nutrition and mental health, with tips for a balanced diet.</p>
+                        <a href="#" class="btn" aria-label="Read more about Nourishing Your Body & Mind">Read More</a>
+                    </article>
+                    <article class="card">
+                        <div class="img-placeholder" style="height: 150px;"></div>
+                        <h3>Practicing Self-Compassion</h3>
+                        <p>Learn to treat yourself with the same kindness and understanding you'd offer a friend.</p>
+                        <a href="#" class="btn" aria-label="Read more about Practicing Self-Compassion">Read More</a>
+                    </article>
+                </div>
             </section>
         </div>
     </main>

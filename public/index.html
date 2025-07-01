@@ -15,11 +15,17 @@
             <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="booking.html" aria-label="Book a new session" class="btn">Book a Session</a></li>
                     <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <!-- For Logged out state -->
                     <li><a href="login.html" aria-label="Login to your account">Login</a></li>
                     <li><a href="register.html" aria-label="Register for an account" class="btn btn-secondary">Register</a></li>
+                    <!-- For Logged in state (example, would be dynamic) -->
+                    <!-- <li><a href="dashboard.html">Dashboard</a></li> -->
+                    <!-- <li><a href="index.html" aria-label="Logout">Logout</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -27,33 +33,71 @@
     <main>
         <section id="hero">
             <div class="container">
-                <h1>Welcome to Unity of Mind and Body</h1>
-                <p>Your journey to mental wellness starts here.</p>
-                <a href="register.html" class="btn">Get Started</a>
+                <!-- Optional: Placeholder for warm imagery -->
+                <!-- <div class="img-placeholder" style="height: 200px; margin-bottom: var(--spacing-lg);">Hero Image/Illustration Placeholder</div> -->
+                <h1>Unity of Mind and Body</h1>
+                <p>Your safe space for mental and physical wellness on campus. Nurturing well-being, one student at a time.</p>
+                <div class="hero-cta-group">
+                    <a href="booking.html" class="btn" aria-label="Book a new session">Book a Session</a>
+                    <a href="resources.html" class="btn btn-secondary">Explore Resources</a>
+                </div>
             </div>
         </section>
+
         <div class="container">
-            <section id="features">
-                <h2>Our Features</h2>
-                <p>Discover how we can help you.</p>
+            <section id="introduction">
+                 <h2>A Holistic Approach to Your Wellness</h2>
+                 <p>We provide a comprehensive range of services designed to support your mental and physical health. From art therapy and meditation to group sessions and yoga, find the support that's right for you. Our mission is to create an accessible and stigma-free environment where every student feels empowered to prioritize their well-being.</p>
+            </section>
+
+            <section id="services-overview">
+                <h2>What We Offer</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Art Therapy</h3>
+                        <p>Express yourself and explore your emotions through creative art-making in a supportive setting.</p>
+                        <a href="booking.html?type=art" class="btn btn-secondary" aria-label="Book an Art Therapy session">Learn More & Book</a>
+                    </div>
+                    <div class="card">
+                        <h3>Group Therapy</h3>
+                        <p>Connect with peers, share experiences, and learn coping strategies in a confidential group environment.</p>
+                        <a href="booking.html?type=group" class="btn btn-secondary" aria-label="Book a Group Therapy session">Learn More & Book</a>
+                    </div>
+                    <div class="card">
+                        <h3>Yoga & Meditation</h3>
+                        <p>Calm your mind, reduce stress, and improve focus with guided yoga and meditation sessions.</p>
+                        <a href="booking.html?type=yoga" class="btn btn-secondary" aria-label="Book a Yoga or Meditation session">Learn More & Book</a>
+                    </div>
+                    <div class="card">
+                        <h3>Resource Library</h3>
+                        <p>Access a wealth of articles, tips, and tools to support your mental health journey anytime, anywhere.</p>
+                        <a href="resources.html" class="btn btn-secondary">Explore Resources</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features"> <!-- Retaining this for other features if any, or can be merged/removed -->
+                <h2>Why Choose Us?</h2>
                 <ul>
-                    <li>Expert Therapists & Counselors</li>
-                    <li>Comprehensive Resource Library</li>
-                    <li>Easy & Secure Session Booking</li>
-                    <li>Supportive Community (Coming Soon)</li>
+                    <li>Supportive and Non-Judgmental Environment</li>
+                    <li>Qualified and Compassionate Professionals</li>
+                    <li>Confidential and Secure Platform</li>
+                    <li>Accessible to All Students and Faculty</li>
                 </ul>
             </section>
-            <section id="call-to-action">
-                <h2>Ready to Take the Next Step?</h2>
-                <p>Explore our resources or book a session today.</p>
-                <a href="resources.html" class="btn">Explore Resources</a>
-                <a href="booking.html" class="btn btn-secondary" aria-label="Book a new session">Book a Session</a>
+
+            <section id="call-to-action" class="cta-section">
+                <h2>Ready to Prioritize Your Well-being?</h2>
+                <p>Take the first step towards a healthier, more balanced you. Explore our services or get in touch today.</p>
+                <a href="register.html" class="btn">Join Our Community</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
             </section>
         </div>
     </main>
     <footer>
         <div class="container">
             <p>&copy; 2024 Unity of Mind and Body. All rights reserved.</p>
+            <p><a href="about.html" aria-label="Learn more about us">About Us</a> | <a href="contact.html" aria-label="Get in touch with us">Contact</a> | <a href="feedback.html" aria-label="Provide feedback on our services">Feedback</a> | <a href="privacy.html" aria-label="View our privacy policy">Privacy Policy</a></p>
         </div>
     </footer>
 </body>
