@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Unity of Mind and Body</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Unity of Mind and Body Home">Unity of Mind and Body</a>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+                    <li><a href="login.html" aria-label="Login to your account">Login</a></li>
+                    <li><a href="register.html" aria-label="Register for an account" class="btn btn-secondary">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="contact-form-section">
+                <h2>Contact Us or Provide Feedback</h2>
+                <p>We value your input. Please use the form below to send us a message, ask a question, or provide feedback on our services.</p>
+                <form id="contactForm" action="#" method="POST">
+                    <div>
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div>
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required aria-required="true">
+                        <span class="error-message" id="subjectError"></span>
+                    </div>
+                    <div>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+            <section id="contact-info">
+                <h2>Other Ways to Reach Us</h2>
+                <p><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
+                <p><strong>Phone:</strong> (123) 456-7890 (Placeholder)</p>
+                <p><strong>Email:</strong> support@unitymindbody.example.com (Placeholder)</p>
+                <p><strong>Location:</strong> 123 Wellness Avenue, Main Campus (Placeholder)</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Unity of Mind and Body. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/forms.js"></script> <!-- Ensure JS is linked for validation -->
+</body>
+</html>

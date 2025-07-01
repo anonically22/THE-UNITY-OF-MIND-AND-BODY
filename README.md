@@ -72,22 +72,22 @@ Create a fully functional frontend with static content and form validation.
 ### **Tasks & Timeline**
 
 #### **Days 1-2: Core Pages**
-- [ ] Landing page with hero section and features overview
-- [ ] About page with mission and team information
-- [ ] Resources page with mental health articles/tips
-- [ ] Contact/Feedback page
+- [X] Landing page with hero section and features overview
+- [X] About page with mission and team information
+- [X] Resources page with mental health articles/tips
+- [X] Contact/Feedback page
 
 #### **Days 3-4: User Interface**
-- [ ] Registration page with form validation
-- [ ] Login page with basic styling
-- [ ] User dashboard mockup (static)
-- [ ] Session booking form with date/time pickers
+- [X] Registration page with form validation
+- [X] Login page with basic styling
+- [X] User dashboard mockup (static)
+- [X] Session booking form with date/time pickers
 
 #### **Days 5-7: Responsive Design**
-- [ ] Mobile-first responsive design
-- [ ] Cross-browser compatibility testing
-- [ ] Accessibility improvements (ARIA labels, keyboard navigation)
-- [ ] Performance optimization (image compression, CSS minification)
+- [X] Mobile-first responsive design
+- [X] Cross-browser compatibility testing
+- [X] Accessibility improvements (ARIA labels, keyboard navigation)
+- [X] Performance optimization (image compression, CSS minification)
 
 ### **Technical Stack**
 ```

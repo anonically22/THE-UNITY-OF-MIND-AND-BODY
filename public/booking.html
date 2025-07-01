@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session - Unity of Mind and Body</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Unity of Mind and Body Home">Unity of Mind and Body</a>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="booking.html" class="active" aria-current="page">Book Session</a></li>
+                    <li><a href="#" aria-label="View your profile">My Profile</a></li>
+                    <li><a href="index.html" aria-label="Logout of your account">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="booking-form-section" class="form-container">
+                <h2>Book a New Session</h2>
+                <p>Please select your preferred therapy type, date, and time. We will confirm availability shortly.</p>
+                <form id="bookingForm" action="#" method="POST" aria-labelledby="booking-form-section-title">
+                    <h2 id="booking-form-section-title" class="visually-hidden">Session Booking Form</h2>
+                    <div>
+                        <label for="therapyType">Type of Therapy:</label>
+                        <select id="therapyType" name="therapyType" required aria-required="true">
+                            <option value="">-- Please select a type --</option>
+                            <option value="individual">Individual Counseling</option>
+                            <option value="group">Group Therapy</option>
+                            <option value="mindfulness">Mindfulness Session</option>
+                            <option value="cbt">Cognitive Behavioral Therapy (CBT)</option>
+                            <option value="family">Family Counseling (Placeholder)</option>
+                        </select>
+                        <span class="error-message" id="therapyTypeError"></span>
+                    </div>
+                    <div>
+                        <label for="sessionDate">Preferred Date:</label>
+                        <input type="date" id="sessionDate" name="sessionDate" required aria-required="true" aria-describedby="dateHelp">
+                        <small id="dateHelp" class="form-text text-muted">Please select a date at least 24 hours in advance.</small>
+                        <span class="error-message" id="sessionDateError"></span>
+                    </div>
+                    <div>
+                        <label for="sessionTime">Preferred Time:</label>
+                        <input type="time" id="sessionTime" name="sessionTime" required aria-required="true" min="09:00" max="17:00" aria-describedby="timeHelp">
+                        <small id="timeHelp" class="form-text text-muted">Sessions available between 9:00 AM and 5:00 PM.</small>
+                        <span class="error-message" id="sessionTimeError"></span>
+                    </div>
+                    <div>
+                        <label for="notes">Additional Notes or Preferences (optional):</label>
+                        <textarea id="notes" name="notes" rows="4" aria-describedby="notesHelp"></textarea>
+                        <small id="notesHelp" class="form-text text-muted">Let us know if you have any specific requests or questions.</small>
+                    </div>
+                    <button type="submit">Request Booking</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Unity of Mind and Body. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/forms.js"></script>
+    <style>.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; } .form-text.text-muted { font-size: 0.85em; color: #6c757d; display: block; margin-top: .25rem;}</style>
+</body>
+</html>
