@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Unity of Mind and Body</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Unity of Mind and Body Home">Unity of Mind and Body</a>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" aria-label="Login to your account">Login</a></li>
+                    <li><a href="register.html" class="active" aria-current="page">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="register-form-section" class="form-container">
+                <h2>Create Your Account</h2>
+                <p>Join our community to access resources and book sessions.</p>
+                <form id="registerForm" action="#" method="POST" aria-labelledby="register-form-section-title">
+                    <h2 id="register-form-section-title" class="visually-hidden">Registration Form</h2>
+                    <div>
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div>
+                        <label for="password">Password (min. 8 characters):</label>
+                        <input type="password" id="password" name="password" required minlength="8" aria-required="true" autocomplete="new-password">
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+                    <div>
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required aria-required="true" autocomplete="new-password">
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px;">Already have an account? <a href="login.html">Login here</a>.</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Unity of Mind and Body. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/forms.js"></script>
+    <style>.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }</style>
+</body>
+</html>
