@@ -434,14 +434,22 @@ small.form-text.text-muted { /* Helper text below inputs */
         flex-direction: row;
         justify-content: space-between;
     }
+    header .container { /* Ensure header container allows space for nav toggle */
+        position: relative; /* For absolute positioning of nav if needed */
+    }
     header .logo {
         margin-bottom: 0;
     }
-    nav ul {
+
+    .nav-toggle {
+        display: none; /* Hidden on larger screens */
+    }
+
+    .main-nav ul { /* Changed from nav ul to .main-nav ul for specificity */
         flex-direction: row;
         width: auto;
     }
-    nav ul li {
+    .main-nav ul li {
         margin: 0 var(--spacing-xs);
         width: auto;
         max-width: none;
@@ -595,4 +603,112 @@ nav ul li a.active {
 }
 .dashboard-header .btn.btn-primary:hover {
     background-color: var(--color-accent-dark);
+}
+
+/* --- Responsive Navigation (Hamburger Menu) --- */
+.nav-toggle {
+    display: block; /* Display by default, hide on larger screens via media query */
+    background: transparent;
+    border: none;
+    color: var(--color-primary-dark);
+    font-size: 1.5rem; /* Adjust size as needed */
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    position: absolute; /* Position relative to header .container */
+    top: var(--spacing-sm);
+    right: var(--spacing-md);
+    z-index: 1001; /* Above other header content */
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+    width: 24px; /* Size of hamburger lines */
+    height: 2px;
+    background: var(--color-primary-dark);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.3s ease-in-out;
+}
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary-dark);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.3s ease-in-out;
+}
+.hamburger::before {
+    top: -8px; /* Spacing of lines */
+}
+.hamburger::after {
+    bottom: -8px; /* Spacing of lines */
+}
+
+.main-nav { /* The <nav> element */
+    /* By default, the ul inside is already flex-column for mobile by previous rules */
+    /* We need to hide it and then show it when active */
+    display: none; /* Hide nav by default on mobile */
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+.main-nav--visible {
+    display: block; /* Show when toggled */
+}
+.main-nav--visible ul {
+    padding: var(--spacing-md) 0; /* Add some padding to the mobile menu */
+}
+.main-nav--visible ul li {
+    width: 90%; /* Ensure links take good width in mobile menu */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Adjustments in the existing @media (min-width: 768px) for nav */
+@media (min-width: 768px) {
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; /* Vertically align logo and nav */
+    }
+    /* ... other existing 768px styles ... */
+    .nav-toggle {
+        display: none; /* Hide hamburger on larger screens */
+    }
+    .main-nav { /* Ensure main-nav is displayed correctly on desktop */
+        display: block;
+        position: static; /* Reset positioning */
+        width: auto; /* Allow nav to size based on content */
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .main-nav ul {
+        flex-direction: row; /* Horizontal nav for desktop */
+        padding: 0; /* Reset padding */
+    }
+    .main-nav ul li {
+        margin: 0 var(--spacing-xs); /* Horizontal spacing */
+        width: auto;
+        max-width: none;
+    }
+}
+
+/* Hamburger animation when active (nav-toggle has aria-expanded="true") */
+.nav-toggle[aria-expanded="true"] .hamburger {
+    background: transparent; /* Middle line disappears */
+}
+.nav-toggle[aria-expanded="true"] .hamburger::before {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.nav-toggle[aria-expanded="true"] .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -6px);
 }
